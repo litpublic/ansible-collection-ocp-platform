@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  role_name: argo_bootstrap
+  author: Lightning IT
+  description: argo_bootstrap role (UPI VMware / Bootstrap)
+  license: Apache-2.0
+  min_ansible_version: '2.14'
+  platforms:
+    - name: EL
+      versions: ['8', '9']
+dependencies: []

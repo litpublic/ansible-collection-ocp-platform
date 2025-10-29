@@ -1,0 +1,24 @@
+---
+- name: Abort because role is experimental
+  ansible.builtin.fail:
+    msg: "lit.install_upi_vmware remains a placeholder; set lit_experimental_acknowledge=true to run stub logic."
+  when: not lit_experimental_acknowledge | bool
+
+- name: Run placeholder tasks
+  when: lit_experimental_acknowledge | bool
+  block:
+    - name: (Skeleton) Connect to vCenter
+      ansible.builtin.debug:
+        msg: "Connecting to {{ vsphere_vcenter }} as {{ vsphere_username }} (UPI vSphere)"
+
+    - name: (Skeleton) Ensure OVA template exists
+      ansible.builtin.debug:
+        msg: "Template {{ template_name }} from {{ template_ova_url }}"
+
+    - name: (Skeleton) Create bootstrap/master/worker VMs and attach ignition
+      ansible.builtin.debug:
+        msg: "Ignition bootstrap={{ ignition_bootstrap }}, master={{ ignition_master }}, worker={{ ignition_worker }}"
+
+    - name: (Skeleton) Power on & wait for bootstrap complete
+      ansible.builtin.debug:
+        msg: "Waiting for bootstrap to complete (oc adm wait-for bootstrap-complete)"

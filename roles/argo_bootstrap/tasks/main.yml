@@ -1,0 +1,53 @@
+---
+- name: Subscribe to OpenShift GitOps operator
+  kubernetes.core.k8s:
+    state: present
+    namespace: openshift-operators
+    definition:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: Subscription
+      metadata:
+        name: openshift-gitops-operator
+        namespace: openshift-operators
+      spec:
+        channel: stable
+        name: openshift-gitops-operator
+        source: redhat-operators
+        sourceNamespace: openshift-marketplace
+  when: argo_bootstrap_apply_resources | bool
+
+- name: Create ArgoCD instance (namespace-scoped) - minimal spec
+  kubernetes.core.k8s:
+    state: present
+    definition:
+      apiVersion: argoproj.io/v1alpha1
+      kind: ArgoCD
+      metadata:
+        name: openshift-gitops
+        namespace: "{{ argo_namespace }}"
+      spec: {}
+  when: argo_bootstrap_apply_resources | bool
+
+- name: Seed App-of-Apps (skeleton)
+  kubernetes.core.k8s:
+    state: present
+    definition:
+      apiVersion: argoproj.io/v1alpha1
+      kind: Application
+      metadata:
+        name: app-of-apps
+        namespace: "{{ argo_namespace }}"
+      spec:
+        project: default
+        source:
+          repoURL: "{{ gitops_repo_url }}"
+          targetRevision: "{{ gitops_repo_revision }}"
+          path: "{{ gitops_app_of_apps_path }}"
+        destination:
+          server: https://kubernetes.default.svc
+          namespace: "{{ argo_namespace }}"
+        syncPolicy:
+          automated:
+            prune: true
+            selfHeal: true
+  when: argo_bootstrap_apply_resources | bool

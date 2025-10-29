@@ -1,0 +1,16 @@
+---
+- name: Converge
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Apply install_upi_vmware role
+      ansible.builtin.include_role:
+        name: litpublic.ocp_platform.install_upi_vmware
+      vars:
+        lit_experimental_acknowledge: true
+
+    - name: Apply argo_bootstrap role
+      ansible.builtin.include_role:
+        name: litpublic.ocp_platform.argo_bootstrap
+      vars:
+        lit_experimental_acknowledge: true

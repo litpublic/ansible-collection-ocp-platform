@@ -1,0 +1,7 @@
+---
+argo_bootstrap_apply_resources: true
+
+argo_namespace: "openshift-gitops"
+gitops_repo_url: "https://git.example.com/platform/gitops-seed.git"
+gitops_repo_revision: "main"
+gitops_app_of_apps_path: "apps/app-of-apps"

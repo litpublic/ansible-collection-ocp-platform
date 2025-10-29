@@ -1,0 +1,7 @@
+---
+- name: Converge install_upi_vmware
+  hosts: all
+  gather_facts: false
+  connection: local
+  roles:
+    - role: install_upi_vmware

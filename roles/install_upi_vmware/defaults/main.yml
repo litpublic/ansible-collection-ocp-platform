@@ -1,0 +1,28 @@
+---
+# Experimental guard: set true to run placeholder tasks
+lit_experimental_acknowledge: false
+
+# vSphere UPI defaults
+vsphere_vcenter: "vcenter.example.com"
+vsphere_username: "administrator@vsphere.local"
+vsphere_password: "REDACTED"
+vsphere_datacenter: "DC1"
+vsphere_cluster: "Compute-Cluster"
+vsphere_datastore: "vsanDatastore"
+vsphere_network: "VM Network"
+resource_pool: null
+folder: "Workloads/OpenShift"
+template_ova_url: "https://mirror.openshift.com/.../ova"
+template_name: "rhcos-template"
+ignition_bootstrap: "/tmp/bootstrap.ign"
+ignition_master: "/tmp/master.ign"
+ignition_worker: "/tmp/worker.ign"
+masters: 3
+workers: 3
+vm_cpu: 8
+vm_memory_mb: 32768
+vm_disk_gb: 120
+dns_servers: ["192.0.2.53"]
+gateway: "192.0.2.1"
+netmask: "255.255.255.0"
+domain: "example.com"

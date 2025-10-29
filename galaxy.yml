@@ -1,0 +1,19 @@
+---
+namespace: litpublic
+name: ocp_platform
+version: 0.0.1
+readme: README.md
+license:
+  - Apache-2.0
+description: >
+  OpenShift platform bootstrap for UPI VMware (vSphere) and Argo CD bootstrap.
+  All post-install cluster configuration must be managed via GitOps.
+authors:
+  - Lightning IT <info@l-it.io>
+tags: [cloud, openshift, kubernetes, gitops, argocd, upi, vmware, vsphere]
+dependencies:
+  kubernetes.core: ">=3.0.0"
+  community.kubernetes: ">=2.0.0"
+  community.vmware: ">=4.0.0"
+repository: https://gitlab.com/lightning-it/ansible-collection-ocp_platform
+issues: https://gitlab.com/lightning-it/ansible-collection-ocp_platform/-/issues

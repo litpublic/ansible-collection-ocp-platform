@@ -1,0 +1,7 @@
+---
+- name: Converge argo_bootstrap
+  hosts: all
+  gather_facts: false
+  connection: local
+  roles:
+    - role: argo_bootstrap
