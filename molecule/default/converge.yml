@@ -14,3 +14,4 @@
         name: litpublic.ocp_platform.argo_bootstrap
       vars:
         lit_experimental_acknowledge: true
+        argo_bootstrap_apply_resources: false
