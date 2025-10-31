@@ -1,4 +1,4 @@
-# litpublic.ocp_platform (v0.0.3) — UPI VMware + ArgoCD Bootstrap
+# litpublic.ocp_platform (v0.0.4) — UPI VMware + ArgoCD Bootstrap
 
 Roles (prefix-free):
 - `install_upi_vmware` — vSphere UPI/OVA workflow (bootstrap/master/worker VMs; ignition attach) *(experimental stub)*

@@ -1,3 +1,10 @@
+## [0.0.4](https://gitlab.com/lit4/modulix/platform/software-development-ecosystem/automation-tools/ansible/collections/ocp_platform/compare/v0.0.3...v0.0.4) (2025-10-31)
+
+
+### Bug Fixes
+
+* add role readmes ([1228faf](https://gitlab.com/lit4/modulix/platform/software-development-ecosystem/automation-tools/ansible/collections/ocp_platform/commit/1228faf32a38d40fcc26c337c216b87a967384cf))
+
 ## [0.0.3](https://gitlab.com/lit4/modulix/platform/software-development-ecosystem/automation-tools/ansible/collections/ocp_platform/compare/v0.0.2...v0.0.3) (2025-10-31)
 
 
